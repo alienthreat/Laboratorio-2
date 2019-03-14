@@ -1,0 +1,86 @@
+-----------------------------------------------------------------------------------------
+Clase 1 - 
+Variables: Tipo de dato - Nombre - Asignaciòn de valor
+
+                int         var1     =0;
+                
+                -Se pueden declarar varias variables a la vez:
+                int var1,var2,var3;
+                -Las palabras reservadas no pueden usarse p/ declarar variables.
+                -Tipos de datos:
+                  -bool - True or false.
+                  -int - Nùmeros enteros (short = 2bytes / long = 4bytes / unsigned = enteros de 0 a 65.535)
+                  -char - Valores entre 0 a 265, que representan un caracter de la tabla ASCII
+                  -float
+                  -double
+
+Muestra de contenido_ Usamos la librerìa <iostream>, la cuàl contiene la instrucciòn "cout<<", usada para mostrar cosas en la pantalla.
+
+"using namespace std" = //Nota: std = estàndar, par aindicar que se usa una librerìa estandar, cosa de no tener que poner "cout::std"-
+
+Libreria: conjunto de funciones/tipos de datos/etc.
+
+Operadores> + - * % ++ -- precrementadores y postcrementadores.
+
+Operadores de asignaciòn : = -= += *= /=
+
+Operadores de comparaciòn : 0 >= <= == !=
+
+Operadores lògicos: &&  ||  !
+
+Operadores sizeof < nos da el tamaño en bytes ocupados por un tipo de dato o variable
+
+Estructura de desiciòn: 
+
+    -if (or if-else)
+    -switches > los flows, las estructuras enteras, no se pueden comparar en un switch; 
+    
+Estructuras Cìclicas:
+    
+    -For
+    -While
+
+
+Cadenas:
+-Son vectores de char(caràcter de la tabla ASCII), que nos permite guardar texto.
+-Tiene un ìndice> indica la posiciòn de un caràcter-
+-Para indicar el fin de cadena se usa /0. Nota /n = salto de lìnea /a = beep /" = muestra la comilla en pantalla
+-El ìndice arranca en CERO.
+
+EJEMPLO: 
+Muestra todo el abecedario en minùsculas:
+
+int main()
+{
+char a='a'; //para que char sea la "a", hay que indicar que a = el nùmero de la tabla ASCII que representa el caràcter "a" 
+        //ò indicar con comillas simples que tiene que ser = al càracter 'a'
+while(a<='z')
+{
+  cout<<a<<endl;
+  a++;
+}
+}
+
+ò
+
+int main()
+{
+int a='a'; //para que char sea la "a", hay que indicar que a = el nùmero de la tabla ASCII que representa el caràcter "a" 
+        //ò indicar con comillas simples que tiene que ser = al càracter 'a'
+while(a<='z')
+{
+  //hacer un casteo - convierte el entero a char(en este caso especìfico)
+  cout<<(char)a<<endl;
+  a++;
+}
+}
+
+cin.getline = obtiene un texto por pantalla, y la cantidad de caràcteres.
+
+cin.get() ò cin>>  se usa para ingresae un caràcter //diferencia entre ambos = cin reconoce espacio como fin de ingreso.
+cin.ignore() limpia el bùffer del teclado.
+
+
+
+
+-----------------------------------------------------------------------------------------
