@@ -81,6 +81,68 @@ cin.get() ò cin>>  se usa para ingresae un caràcter //diferencia entre ambos =
 cin.ignore() limpia el bùffer del teclado.
 
 
+Vectores:
+- Usan misma lògica que las cadenas 
+- Tienen ìndice 
+- diferencia con cadenas: los char no tienen tratamiento especial con los /0; los cout de los vectores indican
+la direcciòn de memoria. Detràs de todo es un puntero.
+
+FUNCIONES: En las funciones, los vectores se pasan como punteros (un vector es una direcciòn de memoria); y se reciben còmo puntero
+
+EJEMPLO:
+int sumaVector(int *v, int tam) //hay que pasar tambièn el tamaño, para saber còmo frenar el vector
+int result =0;
+for(int i=0; i<tam;i++)
+{
+result +=[i]
+}
+
+Diferencia entre valor y referencia:
+-valor es una copia interna dentro de la funciòn (por lo que se modifica la copia dentro de la funciòn, y no se modifica el
+valor original); si se pasa por referencia se modifica el valor otiginal, ya que pasamos la direcciòn de memoria que contiene
+el valor.
+
+
+MATRICES:
+
+  -ìndice doble (ya que es bidimensional, fila y columna).
+  -Siempre va primero FILA y luego COLUMNA
+  -Para pasar a la funciòn, se envìa el tamaño de la fila y columna de la matriz.
+  -Si se modifica un elemento dentro de la matriz, en la funciòn tambièn se ve modificado.
+  
+REVISAR PUNTEROS<<<<
+
+ESTRUCTURAS:
+
+-Agrupaciòn de datos y de tipos de datos, a modo de variable, a modo de tipo de dato.
+-los struct deben ser utilizadas de la misma manera que las variables primitivas: declaro tipo de dato, y el nombre de la variable
+-El acceso a los campos se realiza mediante el punto:
+
+ejemplo
+
+int numero;
+tPersona persona;
+
+MostrarPersona(persona)
+
+para pasar la struct por valor o por referencia?
+
+- en el caso que tengamos que mostrar datos de la estructura se pasa por valor(el valor hace una 
+copia exacta dentro de la funcion),
+- en el caso que tengamos que modificar datos de la estructura se pasa por referencia(el valor modifica directamente los datos),
+se pasa por puntero, y se recive con &.
+-Se usa con flecha sòlo cuando la estructura es con puntero.
+Diferencia flecha, ampersan, asterisco y corchete.
+ampersan: se usa cuando estàs llamando a la funciòn.
+asterisco: se usa cuando estàs pasando la direcciòn de memoria (para poder mostrarlo)
+flecha: se usa cuando es un puntero dentro de la funciòn.
+corchete: 
+REPASAR ESTOS ULTIMOS DOS PUNTOS.
+
+
+
+
+
 
 
 -----------------------------------------------------------------------------------------
