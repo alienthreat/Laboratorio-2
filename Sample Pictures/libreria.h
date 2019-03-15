@@ -22,7 +22,7 @@ void Menu()
     cout<<"- A-Saludar-"<<endl;
     cout<<"- S-Salir  -"<<endl;
     cout<<"------------"<<endl;
-    cout<<"Ingrese una opciòn:"<<endl;
+    cout<<"Ingrese una opciÃ²n:"<<endl;
     cin>>opc;
     cin.get();
     cin.ignore();
@@ -31,17 +31,19 @@ void Menu()
         case 'A':
         case 'a':
         {
-            Saludar();
             system("cls");
-        }break;
+            Saludar();
+            system("pause");
+            system("cls");
+        break;}
         case 'S':
         case 's':
             {
             system("exit");
-            }break;
+            break;}
         default:
         {
-            cout<<"Ingrese una opciòn correcta."<<endl;
-        }break;
+            cout<<"Ingrese una opciÃ²n correcta."<<endl;
+        break;}
     }
         };
