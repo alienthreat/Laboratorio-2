@@ -135,7 +135,7 @@ se pasa por puntero, y se recive con &.
 Diferencia flecha, ampersan, asterisco y corchete.
 ampersan: se usa cuando estàs llamando a la funciòn.
 asterisco: se usa cuando estàs pasando la direcciòn de memoria (para poder mostrarlo)
-flecha: se usa cuando es un puntero dentro de la funciòn.
+flecha: se usa cuando es un puntero dentro de la funciòn, sirve para mostrar el valor que alberga la dirección de memoria (el puntero).
 corchete: ???????????? 
 REPASAR ESTOS ULTIMOS DOS PUNTOS.
 
