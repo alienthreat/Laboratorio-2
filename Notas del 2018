@@ -1,0 +1,352 @@
+ NOTES 6/04
+ //declaraciòn variables
+//conviene declarar los struct en main ya que el resto de .h pueden utilizar los structs declarados en el main (cosa que no sucede si se declaran los struct en un solo .h)
+
+//esto lo declarò en main
+
+tPersona p;
+//declarò el resto de variables del menù 
+
+//punto 9resolution (hecho por el profesor) *declarado en el .h*:
+struct tPersona
+    {
+    int dni;
+	char nombre[20];
+	char apellido[20];
+    };
+//menù switch *REPASAR USO DEL AMPERSAN->& = Direcciòn de memoria de la variable //declarada, se pasa la direcciòn de memoria al puntero que utilizarà la funciòn*
+//case del punto 9 en el menu *dentro del main*:
+{
+cargarPersona(&p);
+}
+
+//declarado en el .h para la resoluciòn punto 9: 
+    void cargarPersona(tPersona *persona)
+{
+        cout<<"Ingrese el DNI de la persona:"<<endl;
+        cin>>persona->dni;
+        cout<<"Ingrese el nombre de la persona:"<<endl;
+cin.getline(persona->nombre);
+cout<<"Ingrese el apellido de la persona:"<<endl;
+cin.getline(persona->apellido);
+};
+
+REPASAR STRUCT!!
+---
+/*Punto 9 ejercicios dia 2 (resuelto por el profesor):
+struct tProducto
+{
+    int id;
+    bool Eliminado;
+    float Precio;
+    int Stock;
+    char Nombre[50];
+};
+
+bool existeProducto(tProducto  *vec, int tam,int id)
+{
+    for(int i=0;i<tam;i++)
+    {
+        if(!vec[i].Eliminado && id==vec[i].id)
+        {
+            return false;
+        }
+    }
+}
+
+tProducto productos[5];
+//
+
+
+
+---------
+//ARCHIVOS////// 12/04
+using namespace std;
+
+struct tCosa
+{
+int numero;
+char texto[1000];
+bool siono; //el sizeof da 1008 porque suma todo lo que hay dentro del struct
+};
+
+#include <cstdio>
+
+int main()
+{
+    //CREACION DE UN ARCHIVO, escritura y lectura:
+    tCosa cosa, cosa2;
+    cosa.numero=1;
+    cosa.siono=true;
+    strcpy(cosa.texto, "texto")
+
+    FILE *p;
+    p = fopen("miArchivo.txt", "wb"); //en caso de no especificar la ruta se crea en la raiz del ejecutable.
+    //VERIFICACION DEL ARCHIVO:
+    if(p!=NULL)
+    {
+    fwrite(&cosa, sizeof(//acasepuedeponervariableotipodedato//cosa, 1, p));                                    //para especificar la ruta serìa: ("Archivos/miArchivo.txt","wb");
+    fclose(p);
+    }
+
+    //si quiero que este archivo siga vigente al reabrir el programa:
+    p = fopen("miArchivo.txt", "rb"); //en caso de no especificar la ruta se crea en la raiz del ejecutable.
+    fread(&cosa2, sizeof(//acasepuedeponervariableotipodedatoquequeremossaber//cosa2, 1, p));                                    //para especificar la ruta serìa: ("Archivos/miArchivo.txt","wb");
+    fclose(p);
+
+    //mostrar lo que se grabo:
+
+    cout<<"Texto:"<<cosa2.texto<<endl;
+    cout<<"Numero:"<<cosa2.numero<<endl;
+    cout<<"siono:"<<cosa2.siono<<endl;
+}
+
+
+//EJERCICIOS DIA2:
+
+Ejercicio 1 en main:
+
+char op;
+bool salir=false;
+while(!salir)
+{
+sys::cls();
+cout<<"A-Limpiar archivo"<<endl;
+cout<<"B-Agregar Producto"<<endl;
+cout<<"c-Mostrar Productos"<<endl;
+cout<<"S-Salir"<<endl;
+cin>>op;
+cin.ignore();
+switch(op)
+{
+{
+case 'a':
+case 'A':
+{
+limpiarArchivo();
+}break;
+{
+case 'b':
+case 'B':
+{
+sys::cls();
+tProducto p;
+CargarProducto(&p);
+guardarProducto(&p);
+}break;
+case 'c':
+case 'C':
+{
+sys::cls();
+tProducto p;
+CargarProducto(&p);
+guardarProducto(&p);
+}break;
+case 's':
+case 'S':
+{
+
+}break;
+default:
+{
+}break;
+}
+
+
+en funciones .h:
+
+const char RUTA_PRODUCTOS = "productos.data"
+struct tProducto
+{
+int id;
+bool Eliminado;
+float Precio;
+char Nombre[100];
+int Stock;
+};
+
+void limpiarArchivo()
+{
+FILE *p;
+p = fopen("RUTA_PRODUCTOS"[], "wb");
+if(p != NULL)
+{
+fclose()
+}
+}
+
+void CargarProducto(tProducto *prod) //ò tProducto CargarProducto()
+{
+tProducto prod;
+cout<<"Ingrese un nombre:"<<endl;
+sys::getline(prod->Nombre, 100);
+cout<<"Ingrese precio:"<<endl;
+cin>>prod->Precio;
+cout<<"Ingrese stock:"<<endl;
+cin>>prod->Stock;
+prod.Eliminado=false;
+}
+
+void GuardarProducto(tProducto *prod)
+{
+FILE /p;
+p= fopen(RUTA_PRODUCTOS; "ab");
+if(p!= NULL)
+{
+fwrite(prod, sizeof(tProducto), 1, p): //si acà paso &prod, le estoy pasando la direccion de memoria (en este caso necesito el valor, no la direccion de memoria)
+fclose(p);
+}
+}
+
+
+//editar productos de un archivo:
+
+void MostrarProducto(tProducto prod)
+{
+cout<<"Producto:"<<prod.Nombre<<endl;
+cout<<"Precio:"<<prod.Precio<<endl;
+cout<<"Stock:"<<prod.Stock<<endl;
+}
+
+void LeerProductos()
+{
+tProducto prod;
+FILE *p;
+p= fopen(RUTA_PRODUCTOS;"rb");
+if(p != NULL)
+{
+cout<<"------------------"<<endl;
+while(fread(&prod, sizeof(tProducto), 1, p))//ESTE WHILE DEVUELVE LA CANTIDAD DE REGISTROS LEIDOS
+{
+if(!prod.Eliminado)//este if es "Si NO està eliminado".
+MostrarProducto(prod);
+cout<<"------------------"<<endl;
+
+}
+}
+}
+
+//BUSCAR UN PRODUCTO AL PRINCIPIO DEL COMMENT.
+*/
+
+--------------------------------------------------------------------------------------------
+NOTES 19/04/2018
+
+Libro de programaciòn orientada a objetos:
+ -Chequear - Capìtulo 28 a 37 - Todo sobre orientado a objetos.
+ -Jesùs Conde (En youtube, muy bueno explicando punteros).
+
+Notes:
+SIEMPRE AGREGAR STDIO AL ARCHIVO #include <cstdio>!!!!!!!!!!
+ -Direcciones de archivo(url/path) conviene declararlas como constante, ya que siempre se utilizarà la misma ruta para abrir/leer/modificar el archivo.
+ -Siempre conviente utilizar la ruta relativa (si movemos nuestro programa a otra computadora, deberìa ser capaz de encontrar el path si se utiliza una ruta relativa).
+ -fwrite (-de dònde leo la variable,
+           -tamaño de tipo de dato,
+           -cantidad de registros,
+           -Nexo entre archivo y memoria (puntero FILE);
+-fclose()SIEMPRE USAR DESPUÈS DE UN FWRITE/FREAD!!!!!!!!!!
+
+
+//punto 1 guia 2
+bool crearArchivo(char *nombre, char *ruta)
+{
+    FILE *p;
+    p = fopen("ruta.data","wb");
+    if(p!=NULL)
+    {
+        fclose(p);
+        return true;
+    }
+    return false;
+}
+
+-----------------------------------------------------------
+ftell()->cantidad de bytes recorrida; nos indica dònde estamos ubicados dentro de la estructura puntero FILE;
+ftell()
+
+ubicaciòn dentro del archivo.
+//tambien punto 1 guia 2
+
+{
+    FILE *p;
+    p = fopen("ruta.data","wb");
+    if(p!=NULL)
+    {
+        fclose(p);
+        return true;
+    }
+    return false;
+}
+
+
+
+fseek(p, cuànto me quiero ir hacia atràs ò sea sizeof(tDato)*-1, SEEK_CUR)
+
+SEEK_SET - Principio
+SEEK_CUR - Actual
+SEEK_END - Final
+
+*-1 = registro actual
+*-2 = registro anterior
+
+Aula = Video de còmo paginar.
+
+TP:
+Crear contacto, modificar contacto, listar contactos.
+Agregar telèfonos, modificar telèfonos existentes, eliminar telèfonos.
+
+---------------------
+Notes 26/04
+
+Validaciòn ejemplo realizada por el profesor:
+bool ValidarSoN(char *texto)
+{
+  char rta[2];
+  do
+  {
+      cout <<texto;
+      cin.getline(rta,2);
+  }while(rta[0]!='s' &&
+         rta[0]!='S' &&
+         rta[0]!='n' &&
+         rta[0]!='N');
+  return rta[0]=='s' ||rta[0]=='S' ;
+}
+
+void validarNumeros(char *texto,char *msgError,char*rta)
+{
+  bool salir;
+  do
+  {
+      cout <<texto;
+      cin.getline(rta,15);
+      int i=0;
+      salir = true;
+      while(rta[i]!='\0')
+      {
+        if(rta[i]< 48 ||
+           rta[i]> 57)
+        {
+          salir = false;
+          break;
+        }
+        i++;
+      }
+      if(!salir)
+      {
+        cout <<msgError<<endl;
+      }
+  }while(!salir);
+}
+
+int main()
+{
+bool respuesta = ValidarSoN("Realmente quiere salir?");
+if(respuesta)
+{
+cout<<"Salimos";
+}
+{
+cout<<"No salimos";
+}
+}
