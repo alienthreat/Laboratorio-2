@@ -1,0 +1,45 @@
+# depslib dependency file v1.0
+1467626600 source:c:\users\pantera\desktop\lab1_tpf_bejaranogabriel\main.cpp
+	<iostream>
+	<cstdlib>
+	"CSYSTEM/csystem.h"
+	"menupresdesp.h"
+	"Funciones.h"
+
+1399506914 c:\users\pantera\desktop\lab1_tpf_bejaranogabriel\csystem\csystem.h
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<ctime>
+	<windows.h>
+	<unistd.h>
+
+1468019285 c:\users\pantera\desktop\lab1_tpf_bejaranogabriel\menupresdesp.h
+	"Funciones.h"
+
+1468018821 c:\users\pantera\desktop\lab1_tpf_bejaranogabriel\funciones.h
+	<iostream>
+	"CSYSTEM/csystem.h"
+
+1467626600 source:c:\users\pantera\desktop\universidad\old\programas\trabajo laboratorio\lab1_tpf_bejaranogabriel\main.cpp
+	<iostream>
+	<cstdlib>
+	"CSYSTEM/csystem.h"
+	"menupresdesp.h"
+	"Funciones.h"
+
+1399506914 c:\users\pantera\desktop\universidad\old\programas\trabajo laboratorio\lab1_tpf_bejaranogabriel\csystem\csystem.h
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<ctime>
+	<windows.h>
+	<unistd.h>
+
+1468019285 c:\users\pantera\desktop\universidad\old\programas\trabajo laboratorio\lab1_tpf_bejaranogabriel\menupresdesp.h
+	"Funciones.h"
+
+1468018821 c:\users\pantera\desktop\universidad\old\programas\trabajo laboratorio\lab1_tpf_bejaranogabriel\funciones.h
+	<iostream>
+	"CSYSTEM/csystem.h"
+
