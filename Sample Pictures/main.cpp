@@ -86,10 +86,12 @@ int main()
 
 
 //COMIENZO DE CODE
-
-    Saludar();
-    Menu();
-
+  
+  bool a=0;
+  while(a!=1);
+  {
+    Menu(a);
+  }
 
     //--------------------------------------------------------------------------
     // FIN DE LA FUNCION main() SIN ERRORES.
