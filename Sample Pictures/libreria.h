@@ -14,7 +14,7 @@ void Saludar()
     cout<<"HOLA"<<endl;
 };
 
-void Menu()
+void Menu(&a)
 {
     system("cls");
     char opc;
@@ -39,11 +39,12 @@ void Menu()
         case 'S':
         case 's':
             {
+             &a=1;   
             system("exit");
             break;}
         default:
         {
             cout<<"Ingrese una opciòn correcta."<<endl;
         break;}
-    }
+    }return a;
         };
