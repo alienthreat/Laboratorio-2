@@ -1,0 +1,59 @@
+//main.cpp
+
+void Menu();
+void Saludar();
+void Ingresar();
+
+void Menu()
+{
+    system("cls");
+    cout<<"----MENU----"<<endl;
+    cout<<"- A-Saludar-"<<endl;
+    cout<<"- S-Salir  -"<<endl;
+    cout<<"------------"<<endl;
+    cout<<"Ingrese una opciòn:"<<endl;
+    Ingresar();
+    cin.get();
+}
+
+void Saludar()
+{
+    system("cls");
+    cout<<"HOLA"<<endl;
+    cin.get();
+    Menu();
+};
+
+void Ingresar()
+{
+    bool salir = false;
+    char opcion[2];
+    while(!salir)
+    {
+        cin>>opcion;
+        cin.ignore();
+        char opc;
+        opc=opcion[0];
+        switch(opc)
+        {
+        case 'a':
+        case 'A':
+        {
+            Saludar();
+        }
+        break;
+        case 's':
+        case 'S':
+        {
+            salir = true;
+        }
+        break;
+        default:
+        {
+            cout<<"Error! Opcion invalida! Presione enter para continuar."<<endl;
+            cin.ignore();
+        }
+        break;
+        }
+    }
+}
