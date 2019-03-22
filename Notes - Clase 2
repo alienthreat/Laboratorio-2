@@ -1,0 +1,7 @@
+Vectores (lleguè 1:15 tarde - Explicò repaso de uso de vectores, y deja comienzo de gupia para realizar)
+
+Revisar archivo "Documentaciòn" del aula virtual (En el mòdulo "Archivo").
+
+Primer exàmen: ARCHIVOS. Empezar a revisar el funcionamiento de archivos.
+
+Inicializaciòn de còmo inicializar la cadena "nombre" de un structure:   str[0].nombre[0]='\0';
