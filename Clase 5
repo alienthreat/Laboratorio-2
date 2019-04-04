@@ -39,4 +39,65 @@ fopen(): nos permite crear o ono archivo/ dónde posicionarnos. Se utilizan 3 le
   LEFT PAD/RIGHT PAD: iomanip<< Libreria y comandos que sirven para realizar formato y estilizar el contenido/tablas/print del programa.
   
   
+#ifndef _WIN32
+#define _WIN32
+#endif
+
+// Si este programa se va a compilar en Linux, descomente las tres lineas
+// siguientes, y comente las tres lineas de "COMPILACION EN WINDOWS".
+//-----------------------------------------------------------------------------
+//#ifndef _LINUX
+//  # define _LINUX
+//#endif
+
+#include <iostream>
+#include <cstdlib>
+#include "CSYSTEM/csystem.h"
+#include <string.h>
+#include <iomanip>
+
+using namespace std;
+struct tDinosaurio{
+    float estatura;
+    char nombre[50];
+    int patas;
+    char color[50];
+    char desplazamiento[50];
+};
+const char RUTA[]="dinos.data"; //se crea una cadena que toma por inferencia la cantidad que tiene dinos.data y se lo asigna a
+                                //los elementos qe tiene una ruta, cada vez que hablemos de ruta se va a referir a "dinos.data"
+// FUNCION PRINCIPAL - PUNTO DE INICIO DEL PROYECTO
+//------------------------------------------------------------------------------
+int main()
+{
+    //CREACIÓN DE ARCHIVO EN MEMORIA
+    tDinosaurio dino;//con t adelante indicamos el tipo de dato.
+    strcpy(dino.color, "Rosa"); //strcpy(donde quiero guardar, valor a guardar)
+    strcpy(dino.nombre, "Pepesaurio");
+    dino.estatura=1;
+    strcpy(dino.desplazamiento, "Vuela");
+
+    FILE *p = fopen(RUTA, "ab"); //fopen(pasamos ruta, modo de apertura);
+    if(p!=NULL){
+        fwrite(&dino, sizeof(tDinosaurio), 1, p);  //fwrite(en que posicion de memoria está, que tamaño tiene que tener la estructura?, solo voy a guardar un registr. p)
+        fclose(p);
+    }
+        FILE *p2 =fopen(RUTA, "rb");
+        if(p2!=NULL){
+                cout<<"--------------------------------------"<<endl;
+        while(fread(&dino, sizeof(tDinosaurio), 1, p2)){
+        cout.width(20);
+        cout<<left<<"COLOR: "<<dino.color<<endl;
+        cout.width(20);
+        cout<<left<<"NOMBRE: "<<dino.nombre<<endl;
+        cout.width(20);
+        cout<<left<<"ESTATURA: "<<dino.estatura<<endl;
+        cout.width(20);
+        cout<<left<<"DESPLAZAMIENTO: "<<dino.desplazamiento<<endl;
+        cout<<"--------------------------------------"<<endl;
+        }
+        fclose(p2);
+    }
+    return 0;
+}
 
