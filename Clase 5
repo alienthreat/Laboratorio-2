@@ -1,0 +1,42 @@
+ARCHIVOS:
+
+Persistencia: Datos e información guardada - Por lo general, bases de datos relacionales.
+Medios de persistencia: HDD, CD's, SD's.
+
+Estrategia de persistencia de datos del lado cliente(web): COOKIES.
+
+Archivos separados por:
+Texto plano: identificado con t (por defecto)
+Texto binario: identificado con b
+
+Librerias a utilizar:
+
+<cstdio> st: standard io: input/output
+
+El archivo no puede ser tocado directamente en el disco rígido. La memoria RAM hace de intermediaria (al abrir el archivo, se sube a 
+la memoria). Para poder trabajar el archivo, se utilizará el puntero FILE *archivo (guarda toda la información, las funciones operan sobre
+el puntero).
+
+Registro: Conjunto de columnas que representa algo. En C++, específicamente: es una estructura que tiene una agrupación de datos.
+
+OPERACIONES:
+
+fopen(): nos permite crear o ono archivo/ dónde posicionarnos. Se utilizan 3 letras para abrir un archivo:
+  r o rb: Arranca al principio del archivo.
+  
+  w o wb: Abre un archivo para escribirlo, y si no existe, lo crea.
+  
+  a o ab: Abre un archivo para escribirlo, si no existe lo crea, y si ya existe te pone al final de todo (para poder escribir a partir de lo
+  último que se escribió en el archivo.
+  
+  rb+ : nos permite mover el cursor, nos permite leer y escribir.
+  
+  fwrite(lee de la memoria la ubicación del registro, tamaño del registro, cantidad de registros a moverse, lo que se va a escribir);
+  fwrite(&variable, sizeof(tipodedato), cantidad de registro, puntero FILE);
+  
+  
+  
+  LEFT PAD/RIGHT PAD: iomanip<< Libreria y comandos que sirven para realizar formato y estilizar el contenido/tablas/print del programa.
+  
+  
+
