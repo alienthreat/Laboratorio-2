@@ -1,0 +1,141 @@
+//EN EL .CPP SE HACE EL DESARROLLO DE LAS FUNCIONES, EN EL .H SE DEFINE LA FUNCIÓN
+//CREAR UNA CLASE, SIEMPRE USAMOS UN .CPP Y UN .H
+
+//GETTERS AND SETTERS>SE DAN VALORES DE INICIO, SE PUEDE USAR PARA HACER VALIDACIONES
+
+//CONSTRUCTORES: TIENEN EL MISMO NOMBRE QUE LAS CLASES, SE USAN PARA PONERLE VALORES A LOS ATRIBUTOS
+
+//DESTRUCTORES: SE EJECUTA AUTOMATICAMENTE AL FINAL DEL SCOPE, SE EJECUTA SOLO Y PUEDE HABER UN DESTRUCTOR ONLY
+//SE UTILIZA PA LIBERAR RECURSOS TIENE EL MISMO NOMBRE QUE LA CLASE Y EL CONSTRUCTOR, PERO SE ANTEPONE EL SIMBOLO: ~
+
+#includes van en el .h //en el .cpp hay qe incluir solamente el clsBicicleta.h
+
+// .H
+using namespace std;
+
+class clsBicicleta
+{
+  public:
+  
+    //DE ACA BORRAMOS EL CONSTRUCTOR clsBicicleta(); QUE VIENE POR DEFECTO. 
+    //CONSTRUCTORES:
+    clsBicicleta(char *, int, int, int, int, bool);
+    clsBicicleta();
+    
+    //DESTRUCTORES:
+    ~clsBicicleta();
+    
+    //IMPLEMENTACION DE METODOS EN EL CPP(IMPLEMENTACION MEANS DESARROLLO DE FUNCIONES)
+    void Acelerar(int);
+    void Frenar();
+    void disminuirVelocidad(int);
+    
+    //sETTERS GETTERS:
+    int getVelocidad();
+    void setVelocidad(int);
+
+  private:
+  char color[50];
+  int rodado, cantidadDeCambios, velocidad, velocidadMaxima;
+}
+
+
+
+
+
+//EN EL CPP:
+
+include "clsBicicleta.h"
+
+clsBicicleta::clsBicicleta() //ESTE CONSTRUCTOR PONE LOS VALORES SI NO SE LE PASA NINGÚN PARÁMETRO,
+{
+  strcpy(this->color, "Roja"); //THIS ES UN PUNTERO A SI MISMO, QUE INDICA CUAL ES EL ATRIBUTO (POR ENDE, EL QUE NO ESTÁ CON PUNTERO ES EL PARÁMETRO;
+  this->rodado = 18;
+  this->cantidadDeCambios =0; 
+  this->velocidad = 0;
+  this->velocidadMaxima = 20;
+  this->contraPedal = false;
+}
+
+
+clsBicicleta::clsBicicleta(char *color,
+int rodado,
+int cantidadDeCambios, 
+int velocidad, 
+int velocidadMaxima, 
+bool contraPedal) //NO DEVUELVE NADA, NI SIQUIERA VOID
+{
+  strcpy(this->color, color); //THIS ES UN PUNTERO A SI MISMO, QUE INDICA CUAL ES EL ATRIBUTO (POR ENDE, EL QUE NO ESTÁ CON PUNTERO ES EL PARÁMETRO;
+  this->rodado = rodado;
+  this->cantidadDeCambios =cantidadDeCambios 
+  this->velocidad = velocidad;
+  this->velocidadMaxima = velocidadMaxima;
+  this->contraPedal = contraPedal;
+}
+
+
+void clsBicicleta::Acelerar(int cant)
+{
+  if(cant+velocidad>velocidadMaxima)
+  {
+  velocidad=velocidadMaxima;
+  }
+  else
+  {
+  velocidad=velocidad+cant;
+  }
+}
+
+void clsBicicleta::Frenar();
+{
+    velocidad=0;
+}
+
+void clsBicicleta::disminuirVelocidad(int cant)
+{  
+  if(velocidad-cant<=0)
+  {
+  velocidad=0;
+  }
+  else
+  {
+  velocidad=velocidad.cant;
+  }
+}
+
+
+int void clsBicicleta::getVelocidad()
+{
+  return velocidad;
+}
+
+void clsBicicleta::setVelocidad(int vel)
+{
+  velocidad=vel;
+}
+
+clsBicicleta::~clsBicicleta(){
+  cout<<"Se destruyo la bicicleta"<<this->color<<endl;  
+}
+
+
+//EN EL MAIN:
+
+include clsBicicleta.h
+
+int main(){
+  clsBicicleta miBici("Verde", 26, 18, 0, 50, false);   clsBicicleta otraBici();
+  cout<<"Velocidad actual:"<<miBici.getVelocidad()<<endl;
+  miBici.acelerar(49);   //EN LA LISTA DESPLEGABLE QUE APARECE AL PONER EL ., LOS VERDES=PUBLICOS, LOS ROJOS=PRIVADOS
+    cout<<"Velocidad acelerada 49:"<<miBici.getVelocidad()<<endl;
+  miBici.disminuirVelocidad(10);
+    cout<<"Velocidad disminuida 10:"<<miBici.getVelocidad()<<endl;
+  miBici.frenar(49);
+    cout<<"Frenar:"<<miBici.getVelocidad()<<endl;
+  
+  otraBici.acelerar(49);
+  otraBici.disminuirVelocidad(10);
+  otraBici.frenar(49);
+
+return 0;
+}
